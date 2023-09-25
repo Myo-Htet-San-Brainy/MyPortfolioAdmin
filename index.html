@@ -5,10 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Links</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- normalize -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <!-- main css -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body></body>
+  <body>
+    <main>
+      <!-- Navbar -->
+      <section class="section-center">
+        <div class="nav">
+          <h2 class="nav-logo">portfolio admin</h2>
+          <button class="nav-button"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </section>
+      <!-- End Of Navbar -->
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- close button -->
+        <button class="sidebar-close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- End Of Close Button -->
+        <!-- sidebar links -->
+        <ul class="sidebar-links">
+          <li><a href="./index.html" class="sidebar-link">Links</a></li>
+          <li><a href="./works.html" class="sidebar-link">works</a></li>
+          <li>
+            <a href="./allProjects.html" class="sidebar-link">all projects</a>
+          </li>
+          <li><a href="./metrics.html" class="sidebar-link">Metrics</a></li>
+        </ul>
+        <!-- End Of Sidebar Links -->
+      </aside>
+      <!-- End Of Sidebar -->
+      <!-- Content -->
+      <section class="section-center">
+        <div class="content">
+          <h2 class="content-title underline">all links</h2>
+          <div class="content-items">
+            <!-- Single Item -->
+            <article class="link-item">
+              <h3 class="link-name underline">Resume</h3>
+              <h3 class="link">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem,
+                soluta?
+              </h3>
+              <div class="link-buttons">
+                <button class="link-update-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="link-delete-button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </article>
+            <!-- End Of Single Item -->
+          </div>
+        </div>
+      </section>
+      <!-- End Of Content -->
+      <!-- Create Button -->
+      <button class="create-btn">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <!-- End Of Create Button -->
+      <!-- js -->
+      <script type="module" src="./js/links.js"></script>
+    </main>
+  </body>
 </html>
