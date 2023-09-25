@@ -394,6 +394,49 @@ main {
   }
 }
 
+.content-item-img {
+  border-radius: var(--borderRadius);
+  margin-bottom: 1rem;
+}
+
+.content-item-info {
+  margin-bottom: 1rem;
+}
+
+.content-item-name {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.content-item-id {
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+}
+
+.content-item-text {
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+}
+
+.content-item-url {
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.content-item-url-title {
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+}
+
 /* CREATE BUTTON */
 .create-btn {
   position: fixed;
@@ -427,6 +470,7 @@ main {
   font-size: 1rem;
   color: var(--white);
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
 .link-buttons {
@@ -448,4 +492,32 @@ main {
 
 .link-buttons button:hover {
   transform: scale(1.08);
+}
+
+/* WORKS */
+.work-item-client-name {
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+}
+
+.work-item-client-review {
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+}
+
+/* PROJECTS */
+.project-item-github-url-title {
+  font-size: 1.2rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+}
+
+.project-item-github-url {
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+  font-style: italic;
 }
