@@ -181,9 +181,11 @@ ul {
 /* form */
 
 .form {
+  position: relative;
   width: 90vw;
   max-width: var(--fixed-width);
   background: var(--white);
+  color: var(--primary-400);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
@@ -471,6 +473,10 @@ main {
   display: none;
 }
 
+.show-form {
+  display: grid;
+}
+
 /*  LINKS */
 
 .link-name {
@@ -534,4 +540,39 @@ main {
   letter-spacing: var(--letterSpacing);
   margin-bottom: 0.5rem;
   font-style: italic;
+}
+
+/* CREATE FORM */
+.form-title {
+  margin-bottom: 1rem;
+}
+
+.create-form-alert {
+  margin-top: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  display: none;
+}
+
+.close-create-form-alert {
+  display: block;
+}
+
+input,
+textarea {
+  margin-bottom: 1rem;
+}
+
+.submit-form-btn {
+  color: var(--white);
+  border: transparent;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  border-radius: var(--borderRadius);
+  background-color: var(--primary-600);
+  transition: var(--transition);
+}
+
+.submit-form-btn:hover {
+  transform: scale(1.09);
 }

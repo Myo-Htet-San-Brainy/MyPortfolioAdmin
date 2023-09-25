@@ -1,6 +1,6 @@
 //SELECTORS
 const openSidebarBtn = checkElementNull(".nav-button");
-const closeSidebarBtn = checkElementNull(".sidebar-close-btn");
+const closeSidebarBtn = checkElementNull(".sidebar-close-cross");
 const sidebar = checkElementNull(".sidebar");
 
 //IMPORTS
