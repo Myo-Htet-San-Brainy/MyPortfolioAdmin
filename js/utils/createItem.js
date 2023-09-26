@@ -33,6 +33,7 @@ createItemBtn.addEventListener("click", (e) => {
       //validate data, throw errs accordingly
       const formData = new FormData(form);
       const inputData = validateForm(formData);
+      formatWork(inputData, formType);
       //send req
       sendCreateItemReq(inputData, formType);
       //close form
@@ -51,7 +52,7 @@ async function sendCreateItemReq(inputData, resType) {
     const res = await axios.post(`${baseUrl}/${resType}/`, inputData, {
       headers: {
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDUxMzUsImV4cCI6MTY5NTc0ODczNX0.FXamkpCymAgNcsLjHVE22IohfJ0B4CO1pSNJbn188Vg",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDg4NTksImV4cCI6MTY5NTc1MjQ1OX0.lFxCPAJOhCHK5cPdr8an80HsWJxtbwGNIKDJGX3w9LU",
       },
     });
     console.dir(res);
@@ -61,6 +62,18 @@ async function sendCreateItemReq(inputData, resType) {
   } catch (error) {
     console.dir(error);
     alert("Unsuccessful creation:( Try again later.");
+  }
+}
+
+//format work
+function formatWork(inputData, formType) {
+  if (formType === "works") {
+    inputData.client = {
+      name: inputData.clientName,
+      review: inputData.clientReview,
+    };
+    delete inputData["clientName"];
+    delete inputData["clientReview"];
   }
 }
 
