@@ -94,7 +94,7 @@ export const formTemplates = {
           ></textarea>
           <button type="submit" class="submit-form-btn">create</button>
         </form>`,
-  allProjects: `<form class="form">
+  projects: `<form class="form">
   <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
         </button>

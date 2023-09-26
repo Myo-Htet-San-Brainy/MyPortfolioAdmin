@@ -1,3 +1,6 @@
+//globals
+var baseUrl = "http://localhost:5000/api/v1";
+
 //SELECTORS
 const createItemBtn = checkElementNull(".create-btn");
 const formContainer = checkElementNull(".transparent-bg");
@@ -31,24 +34,27 @@ createItemBtn.addEventListener("click", (e) => {
       const formData = new FormData(form);
       const inputData = validateForm(formData);
       //send req
-      sendReq(inputData);
+      sendCreateItemReq(inputData, formType);
       //close form
       closeForm();
-      //   alert("Item created. Please refresh to see it.");
+      alert("Item created. Please refresh to see it.");
     } catch (error) {
-      console.log("form main");
       createFormAlert.textContent = error.message;
       createFormAlert.style.display = "block";
     }
   });
 });
 
-//Post req
-async function sendReq(inputData) {
+// req
+async function sendCreateItemReq(inputData, resType) {
   try {
-    const url = "http://localhost:5000/api/v1/links/";
-    console.log(inputData);
-    const test = await axios.post(url, inputData);
+    const test = await axios.post(`${baseUrl}/${resType}/`, inputData, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDUxMzUsImV4cCI6MTY5NTc0ODczNX0.FXamkpCymAgNcsLjHVE22IohfJ0B4CO1pSNJbn188Vg",
+      },
+    });
+    console.dir(test);
   } catch (error) {
     console.dir(error);
     alert("Unsuccessful creation:( Try again later.");
