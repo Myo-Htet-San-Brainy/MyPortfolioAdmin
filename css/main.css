@@ -267,6 +267,10 @@ ul {
   border-bottom: 5px solid var(--primary-600);
 }
 
+.btn-center {
+  text-align: center;
+}
+
 /* Main */
 main {
   background-color: var(--primary-300);
@@ -571,4 +575,27 @@ textarea {
 
 .submit-form-btn:hover {
   transform: scale(1.09);
+}
+
+/* LOGIN */
+.login-section-form {
+  position: fixed;
+  inset: 0px;
+  display: grid;
+  place-items: center;
+  /* border: 2px solid salmon; */
+}
+
+.login-submit-btn {
+  border: transparent;
+  background-color: var(--primary-600);
+  color: var(--white);
+  padding: 0.4rem;
+  border-radius: var(--borderRadius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.login-submit-btn:hover {
+  transform: scale(1.1);
 }

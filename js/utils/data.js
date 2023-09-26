@@ -133,3 +133,7 @@ export const formTemplates = {
           <button type="submit" class="submit-form-btn">create</button>
         </form>`,
 };
+
+//api base urls
+export var localBaseUrl = "http://localhost:5000/api/v1";
+export var globalBaseUrl = "https://my-portfolio-a88p.onrender.com/api/v1";

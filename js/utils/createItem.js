@@ -1,13 +1,10 @@
-//globals
-var baseUrl = "http://localhost:5000/api/v1";
-
 //SELECTORS
 const createItemBtn = checkElementNull(".create-btn");
 const formContainer = checkElementNull(".transparent-bg");
 
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import { formTemplates } from "./data.js";
+import { formTemplates, globalBaseUrl, localBaseUrl } from "./data.js";
 
 //LOGIC
 //EVENT LISTENER CREATE BTN
@@ -49,7 +46,7 @@ createItemBtn.addEventListener("click", (e) => {
 async function sendCreateItemReq(inputData, resType) {
   try {
     console.log(inputData);
-    const res = await axios.post(`${baseUrl}/${resType}/`, inputData, {
+    const res = await axios.post(`${localBaseUrl}/${resType}/`, inputData, {
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDg4NTksImV4cCI6MTY5NTc1MjQ1OX0.lFxCPAJOhCHK5cPdr8an80HsWJxtbwGNIKDJGX3w9LU",
