@@ -37,7 +37,6 @@ createItemBtn.addEventListener("click", (e) => {
       sendCreateItemReq(inputData, formType);
       //close form
       closeForm();
-      alert("Item created. Please refresh to see it.");
     } catch (error) {
       createFormAlert.textContent = error.message;
       createFormAlert.style.display = "block";
@@ -48,13 +47,17 @@ createItemBtn.addEventListener("click", (e) => {
 // req
 async function sendCreateItemReq(inputData, resType) {
   try {
-    const test = await axios.post(`${baseUrl}/${resType}/`, inputData, {
+    console.log(inputData);
+    const res = await axios.post(`${baseUrl}/${resType}/`, inputData, {
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDUxMzUsImV4cCI6MTY5NTc0ODczNX0.FXamkpCymAgNcsLjHVE22IohfJ0B4CO1pSNJbn188Vg",
       },
     });
-    console.dir(test);
+    console.dir(res);
+    if (res.data.success) {
+      alert("Item created. Please refresh to see it.");
+    }
   } catch (error) {
     console.dir(error);
     alert("Unsuccessful creation:( Try again later.");

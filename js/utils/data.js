@@ -62,10 +62,10 @@ export const formTemplates = {
             placeholder="Work Name"
             class="form-input"
           />
-          <label for="info" class="form-label">Work Info</label>
+          <label for="text" class="form-label">Work Info</label>
           <input
             type="text"
-            name="info"
+            name="text"
             placeholder="Work Info"
             class="form-input"
           />
@@ -109,10 +109,10 @@ export const formTemplates = {
             placeholder="Project Name"
             class="form-input"
           />
-          <label for="info" class="form-label">Project Info</label>
+          <label for="text" class="form-label">Project Info</label>
           <input
             type="text"
-            name="info"
+            name="text"
             placeholder="Project Info"
             class="form-input"
           />
@@ -123,10 +123,10 @@ export const formTemplates = {
             placeholder="Website Url"
             class="form-input"
           />
-          <label for="githubUrl" class="form-label">Github Repo Url</label>
+          <label for="gitHubLink" class="form-label">Github Repo Url</label>
           <input
             type="text"
-            name="githubUrl"
+            name="gitHubLink"
             placeholder="Github Repo Url"
             class="form-input"
           />
