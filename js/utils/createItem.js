@@ -21,15 +21,54 @@ createItemBtn.addEventListener("click", (e) => {
     closeForm();
   });
   //CREATE ITEM BTN LISTENER
+  const submitFormBtn = checkElementNull(".submit-form-btn");
   const form = checkElementNull(".form");
-  form.addEventListener("click", (e) => {
-    e.preventDefault();
-    //validate data, throw errs accordingly and send req
-    //clear inputs
-    //close form
-    closeForm();
+  const createFormAlert = checkElementNull(".create-form-alert");
+  submitFormBtn.addEventListener("click", (e) => {
+    try {
+      e.preventDefault();
+      //validate data, throw errs accordingly
+      const formData = new FormData(form);
+      const inputData = validateForm(formData);
+      //send req
+      sendReq(inputData);
+      //close form
+      closeForm();
+      //   alert("Item created. Please refresh to see it.");
+    } catch (error) {
+      console.log("form main");
+      createFormAlert.textContent = error.message;
+      createFormAlert.style.display = "block";
+    }
   });
 });
+
+//Post req
+async function sendReq(inputData) {
+  try {
+    const url = "http://localhost:5000/api/v1/links/";
+    console.log(inputData);
+    const test = await axios.post(url, inputData);
+  } catch (error) {
+    console.dir(error);
+    alert("Unsuccessful creation:( Try again later.");
+  }
+}
+
+//VALIDATE FORM
+function validateForm(formData) {
+  const result = {};
+  const entries = formData.entries();
+  for (const entry of entries) {
+    const [key, value] = entry;
+    if (value === "") {
+      throw new Error("Please provide all fields");
+    } else {
+      result[key] = value;
+    }
+  }
+  return result;
+}
 
 //CLOSE FORM LOGIC
 const closeForm = function () {

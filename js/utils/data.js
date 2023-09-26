@@ -1,5 +1,5 @@
 export const formTemplates = {
-  links: `<div class="form">
+  links: `<form class="form">
             <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -14,16 +14,16 @@ export const formTemplates = {
             placeholder="Link Name"
             class="form-input"
           />
-          <label for="url" class="form-label">Link Url</label>
+          <label for="link" class="form-label">Link Url</label>
           <input
             type="text"
-            name="url"
+            name="link"
             placeholder="Link Url"
             class="form-input"
           />
           <button type="submit" class="submit-form-btn">create</button>
-        </div>`,
-  metrics: `        <div class="form">
+        </form>`,
+  metrics: `        <form class="form">
   <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -46,8 +46,8 @@ export const formTemplates = {
             class="form-input"
           />
           <button type="submit" class="submit-form-btn">create</button>
-        </div>`,
-  works: `<div class="form">
+        </form>`,
+  works: `<form class="form">
   <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -93,8 +93,8 @@ export const formTemplates = {
             class="form-textarea"
           ></textarea>
           <button type="submit" class="submit-form-btn">create</button>
-        </div>`,
-  allProjects: `<div class="form">
+        </form>`,
+  allProjects: `<form class="form">
   <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -131,5 +131,5 @@ export const formTemplates = {
             class="form-input"
           />
           <button type="submit" class="submit-form-btn">create</button>
-        </div>`,
+        </form>`,
 };

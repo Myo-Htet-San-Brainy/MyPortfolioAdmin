@@ -554,10 +554,6 @@ main {
   display: none;
 }
 
-.close-create-form-alert {
-  display: block;
-}
-
 input,
 textarea {
   margin-bottom: 1rem;
