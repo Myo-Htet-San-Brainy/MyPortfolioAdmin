@@ -134,6 +134,41 @@ export const formTemplates = {
         </form>`,
 };
 
+export const itemTemplates = {
+  links: function (item) {
+    return `<article class="content-item">
+              <h3 class="link-name underline">${item.name}</h3>
+              <h3 class="content-item-id">ID: ${item._id}</h3>
+              <h3 class="link">
+                ${item.link}
+              </h3>
+              <div class="link-buttons">
+                <button class="link-update-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="link-delete-button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </article>`;
+  },
+  "metrics/nonFormattedMetrics": function (item) {
+    return `<article class="content-item">
+              <h3 class="link-name underline">${item.name}</h3>
+              <h3 class="content-item-id">ID: ${item._id}</h3>
+              <h3 class="link">${item.number}</h3>
+              <div class="link-buttons">
+                <button class="link-update-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="link-delete-button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </article>`;
+  },
+};
+
 //api base urls
 export var localBaseUrl = "http://localhost:5000/api/v1";
 export var productionBaseUrl = "https://my-portfolio-a88p.onrender.com/api/v1";
