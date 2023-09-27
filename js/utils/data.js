@@ -226,7 +226,7 @@ export const itemTemplates = {
                 </h3>
                 <h3 class="project-item-github-url-title">Github Link</h3>
                 <h3 class="project-item-github-url">
-                  ${item.gitHubUrl}
+                  ${item.gitHubLink}
                 </h3>
               </div>
               <!-- end of item info -->

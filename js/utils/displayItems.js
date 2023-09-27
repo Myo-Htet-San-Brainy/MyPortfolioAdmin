@@ -13,8 +13,22 @@ async function fetchData() {
     const res = await axios.get(`${localBaseUrl}/${resType}`);
     if (res.data.success) {
       //iterate over data and show content
-      console.log(res.data.data);
       displayItemsUsingData(res.data.data);
+      //add event listeners on delete btns
+      let deleteBtns = checkElementNull(".link-delete-button", true);
+      deleteBtns = Array.from(deleteBtns);
+      deleteBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          //get id
+          const container = btn.parentElement.parentElement;
+          const id = container
+            .querySelector(".content-item-id")
+            .textContent.split(" ")[1];
+          //send delete req
+          sendDeleteReq(id);
+        });
+      });
+      //add event listeners on update btns
       return;
     }
     throw new Error();
@@ -30,4 +44,22 @@ function displayItemsUsingData(data) {
   });
   items = items.join(" ");
   parentContainer.innerHTML = items;
+}
+
+async function sendDeleteReq(id) {
+  try {
+    const res = await axios.delete(`${localBaseUrl}/links/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      },
+    });
+    if (res.data.success) {
+      alert("Successful data deletion.Please refresh to see updated data.");
+      return;
+    }
+    throw new Error();
+  } catch (error) {
+    console.dir(error);
+    alert("An error happens while deleting data:(");
+  }
 }
