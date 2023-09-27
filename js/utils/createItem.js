@@ -4,7 +4,7 @@ const formContainer = checkElementNull(".transparent-bg");
 
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import { formTemplates, globalBaseUrl, localBaseUrl } from "./data.js";
+import { formTemplates, productionBaseUrl, localBaseUrl } from "./data.js";
 
 //LOGIC
 //EVENT LISTENER CREATE BTN

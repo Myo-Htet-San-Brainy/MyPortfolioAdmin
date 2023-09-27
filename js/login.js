@@ -4,7 +4,7 @@ const loginBtn = checkElementNull(".login-submit-btn");
 
 //IMPORTS
 import { checkElementNull } from "../js/utils/checkElementNull.js";
-import { localBaseUrl, globalBaseUrl } from "./utils/data.js";
+import { localBaseUrl, productionBaseUrl } from "./utils/data.js";
 
 //LOGIC
 //btn listening
