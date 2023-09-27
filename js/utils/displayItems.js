@@ -1,8 +1,15 @@
 //SELECTORS
 const parentContainer = checkElementNull(".content-items");
+const formContainer = checkElementNull(".transparent-bg");
+
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import { itemTemplates, localBaseUrl, productionBaseUrl } from "./data.js";
+import {
+  itemTemplates,
+  localBaseUrl,
+  productionBaseUrl,
+  updateFormTemplates,
+} from "./data.js";
 //LOGIC
 // DISPLAY LOGIC
 var resType = parentContainer.dataset.type;
@@ -17,7 +24,7 @@ async function fetchData() {
       //add event listeners on delete btns
       addListenersOnDeleteBtns();
       //add event listeners on update btns
-      addListenersOnUpdateBtns();
+      addListenersOnUpdateBtns(res.data.data);
       return;
     }
     throw new Error();
@@ -72,12 +79,37 @@ async function sendDeleteReq(id, resType) {
 }
 
 // UPDATE RELATED LOGIC
-function addListenersOnUpdateBtns() {
+function addListenersOnUpdateBtns(data) {
   let updateBtns = checkElementNull(".link-update-button", true);
   updateBtns = Array.from(updateBtns);
   updateBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      console.log("displaying a form");
+      //get restype, id
+      const resType = btn.dataset.type;
+      const container = btn.parentElement.parentElement;
+      const id = container
+        .querySelector(".content-item-id")
+        .textContent.split(" ")[1];
+      // get the form and fill values in it
+      const updateFormGenerator = updateFormTemplates[resType];
+      const clickedItem = data.filter((item) => String(item._id) === id);
+      const updateFormTemplate = updateFormGenerator(clickedItem[0]);
+      console.log(updateFormTemplate);
+      //show form
+      formContainer.innerHTML = updateFormTemplate;
+      formContainer.classList.add("show-form");
+      //CLOSE FORM LISTENER
+      const formCloseBtn = checkElementNull(".form-close-cross");
+      formCloseBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeForm();
+      });
+      //UPDATE SUBMIT BTN
     });
   });
 }
+
+//CLOSE FORM LOGIC
+const closeForm = function () {
+  formContainer.classList.remove("show-form");
+};

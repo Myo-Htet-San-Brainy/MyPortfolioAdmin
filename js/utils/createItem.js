@@ -21,7 +21,8 @@ createItemBtn.addEventListener("click", (e) => {
   formContainer.classList.add("show-form");
   //CLOSE FORM LISTENER
   const formCloseBtn = checkElementNull(".form-close-cross");
-  formCloseBtn.addEventListener("click", () => {
+  formCloseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     closeForm();
   });
   //CREATE ITEM BTN LISTENER
