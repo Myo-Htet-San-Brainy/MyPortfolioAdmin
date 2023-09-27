@@ -1,4 +1,4 @@
-export const formTemplates = {
+export const createFormTemplates = {
   links: `<form class="form">
             <button class="sidebar-close-btn form-close-cross">
           <i class="fa-solid fa-xmark"></i>
@@ -143,10 +143,10 @@ export const itemTemplates = {
                 ${item.link}
               </h3>
               <div class="link-buttons">
-                <button class="link-update-button">
+                <button class="link-update-button" data-type ="links">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button class="link-delete-button">
+                <button class="link-delete-button" data-type ="links">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>
@@ -158,10 +158,10 @@ export const itemTemplates = {
               <h3 class="content-item-id">ID: ${item._id}</h3>
               <h3 class="link">${item.number}</h3>
               <div class="link-buttons">
-                <button class="link-update-button">
+                <button class="link-update-button" data-type ="metrics">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button class="link-delete-button">
+                <button class="link-delete-button" data-type ="metrics">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>
@@ -194,10 +194,10 @@ export const itemTemplates = {
               </div>
               <!-- end of item info -->
               <div class="link-buttons">
-                <button class="link-update-button">
+                <button class="link-update-button" data-type ="works">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button class="link-delete-button">
+                <button class="link-delete-button" data-type ="works">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>
@@ -231,10 +231,10 @@ export const itemTemplates = {
               </div>
               <!-- end of item info -->
               <div class="link-buttons">
-                <button class="link-update-button">
+                <button class="link-update-button" data-type ="projects">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button class="link-delete-button">
+                <button class="link-delete-button" data-type ="projects">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>

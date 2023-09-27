@@ -4,14 +4,18 @@ const formContainer = checkElementNull(".transparent-bg");
 
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import { formTemplates, productionBaseUrl, localBaseUrl } from "./data.js";
+import {
+  createFormTemplates,
+  productionBaseUrl,
+  localBaseUrl,
+} from "./data.js";
 
 //LOGIC
 //EVENT LISTENER CREATE BTN
 createItemBtn.addEventListener("click", (e) => {
   //GET THE CORRECT FORM TEMPLATE N ADD IT TO PARENT
   const formType = e.currentTarget.dataset.page;
-  const formTemplate = formTemplates[formType];
+  const formTemplate = createFormTemplates[formType];
   formContainer.innerHTML = formTemplate;
   //ADD CLASS TO PARENT
   formContainer.classList.add("show-form");
