@@ -55,7 +55,9 @@ async function sendCreateItemReq(inputData, resType) {
     console.dir(res);
     if (res.data.success) {
       alert("Item created. Please refresh to see it.");
+      return;
     }
+    throw new Error();
   } catch (error) {
     console.dir(error);
     alert("Unsuccessful creation:( Try again later.");
