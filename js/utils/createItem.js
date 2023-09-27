@@ -48,8 +48,7 @@ async function sendCreateItemReq(inputData, resType) {
     console.log(inputData);
     const res = await axios.post(`${localBaseUrl}/${resType}/`, inputData, {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTU3NDg4NTksImV4cCI6MTY5NTc1MjQ1OX0.lFxCPAJOhCHK5cPdr8an80HsWJxtbwGNIKDJGX3w9LU",
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },
     });
     console.dir(res);

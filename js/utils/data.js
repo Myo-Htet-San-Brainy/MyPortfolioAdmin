@@ -167,6 +167,79 @@ export const itemTemplates = {
               </div>
             </article>`;
   },
+  works: function (item) {
+    return `<article class="content-item">
+              <!-- item image -->
+              <img
+                src=${item.img}
+                alt="work"
+                class="content-item-img img"
+              />
+              <!-- end of item image -->
+              <!-- item info -->
+              <div class="content-item-info">
+                <h3 class="content-item-name underline">${item.name}</h3>
+                <h3 class="content-item-id">ID: ${item._id}</h3>
+                <p class="content-item-text">
+                  ${item.text}
+                </p>
+                <h3 class="content-item-url-title">Website Link</h3>
+                <h3 class="content-item-url">
+                  ${item.siteUrl}
+                </h3>
+                <h3 class="work-item-client-name">${item.client.name} says:</h3>
+                <p class="work-item-client-review">
+                  ${item.client.review}
+                </p>
+              </div>
+              <!-- end of item info -->
+              <div class="link-buttons">
+                <button class="link-update-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="link-delete-button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </article>`;
+  },
+  projects: function (item) {
+    return `<article class="content-item">
+              <!-- item image -->
+              <img
+                src="${item.img}"
+                alt="work"
+                class="content-item-img img"
+              />
+              <!-- end of item image -->
+              <!-- item info -->
+              <div class="content-item-info">
+                <h3 class="content-item-name underline">${item.name}</h3>
+                <h3 class="content-item-id">ID: ${item._id}</h3>
+
+                <p class="content-item-text">
+                  ${item.text}
+                </p>
+                <h3 class="content-item-url-title">Website Link</h3>
+                <h3 class="content-item-url">
+                  ${item.siteUrl}
+                </h3>
+                <h3 class="project-item-github-url-title">Github Link</h3>
+                <h3 class="project-item-github-url">
+                  ${item.gitHubUrl}
+                </h3>
+              </div>
+              <!-- end of item info -->
+              <div class="link-buttons">
+                <button class="link-update-button">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="link-delete-button">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </article>`;
+  },
 };
 
 //api base urls
