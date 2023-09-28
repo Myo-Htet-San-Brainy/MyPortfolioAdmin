@@ -3,6 +3,26 @@
   to = "/login.html"
   status = 301
   force = false
-  query = {path = ":path"}
   
+  
+[[redirects]]
+  from = "/index.html"
+  to = "/login.html"
+  status = 301
+  force = false
+
+
+[[redirects]]
+  from = "/*"
+  to = "/login.html"
+  status = 301
+  force = false
+  
+  
+
+
+  
+  
+
+
 
