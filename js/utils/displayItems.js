@@ -94,7 +94,6 @@ function addListenersOnUpdateBtns(data) {
       const updateFormGenerator = updateFormTemplates[resType];
       const clickedItem = data.filter((item) => String(item._id) === id);
       const updateFormTemplate = updateFormGenerator(clickedItem[0]);
-      console.log(updateFormTemplate);
       //show form
       formContainer.innerHTML = updateFormTemplate;
       formContainer.classList.add("show-form");
@@ -104,7 +103,26 @@ function addListenersOnUpdateBtns(data) {
         e.preventDefault();
         closeForm();
       });
-      //UPDATE SUBMIT BTN
+      //UPDATE SUBMIT BTN LOGIC
+      const updateSubmitBtn = checkElementNull(".submit-form-btn");
+      const form = checkElementNull(".form");
+      const createFormAlert = checkElementNull(".create-form-alert");
+      updateSubmitBtn.addEventListener("click", (e) => {
+        try {
+          e.preventDefault();
+          //validate data, throw errs accordingly
+          const formData = new FormData(form);
+          const inputData = validateForm(formData);
+          console.log(inputData);
+          //send req
+
+          //close form
+          closeForm();
+        } catch (error) {
+          createFormAlert.textContent = error.message;
+          createFormAlert.style.display = "block";
+        }
+      });
     });
   });
 }
@@ -113,3 +131,18 @@ function addListenersOnUpdateBtns(data) {
 const closeForm = function () {
   formContainer.classList.remove("show-form");
 };
+
+//VALIDATE FORM
+function validateForm(formData) {
+  const result = {};
+  const entries = formData.entries();
+  for (const entry of entries) {
+    const [key, value] = entry;
+    if (value === "") {
+      throw new Error("Please provide all fields");
+    } else {
+      result[key] = value;
+    }
+  }
+  return result;
+}

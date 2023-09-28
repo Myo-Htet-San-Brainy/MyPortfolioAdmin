@@ -201,6 +201,7 @@ export const updateFormTemplates = {
           <label for="clientReview" class="form-label">Client Review</label>
           <textarea
             name="clientReview"
+            value=${item.client.review}
             placeholder=${item.client.review}
             cols="30"
             rows="10"
@@ -222,28 +223,28 @@ export const updateFormTemplates = {
           <input
             type="text"
             name="name"
-            value=${item.name}
+            value=${String(item.name)}
             class="form-input"
           />
           <label for="text" class="form-label">Project Info</label>
           <input
             type="text"
             name="text"
-            value=${item.text}
+            value=${String(item.text)}
             class="form-input"
           />
           <label for="siteUrl" class="form-label">Website Url</label>
           <input
             type="text"
             name="siteUrl"
-            value=${item.siteUrl}
+            value=${String(item.siteUrl)}
             class="form-input"
           />
           <label for="gitHubLink" class="form-label">Github Repo Url</label>
           <input
             type="text"
             name="gitHubLink"
-            value=${item.gitHubLink}
+            value=${String(item.gitHubLink)}
             class="form-input"
           />
           <button type="submit" class="submit-form-btn">Update</button>
@@ -272,7 +273,7 @@ export const updateFormTemplates = {
             value=${item.number}
             class="form-input"
           />
-          <button type="submit" class="submit-form-btn">create</button>
+          <button type="submit" class="submit-form-btn">Update</button>
         </form>`;
   },
 };
