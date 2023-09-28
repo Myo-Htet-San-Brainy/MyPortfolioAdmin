@@ -4,12 +4,7 @@ const formContainer = checkElementNull(".transparent-bg");
 
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import {
-  itemTemplates,
-  localBaseUrl,
-  productionBaseUrl,
-  updateFormTemplates,
-} from "./data.js";
+import { itemTemplates, baseUrl, updateFormTemplates } from "./data.js";
 //LOGIC
 // DISPLAY LOGIC
 var resType = parentContainer.dataset.type;
@@ -17,7 +12,7 @@ var itemTemplateGenerator = itemTemplates[resType];
 async function fetchData() {
   try {
     parentContainer.textContent = "Fetching Data...";
-    const res = await axios.get(`${localBaseUrl}/${resType}`);
+    const res = await axios.get(`${baseUrl}/${resType}`);
     if (res.data.success) {
       //iterate over data and show content
       displayItemsUsingData(res.data.data);
@@ -62,7 +57,7 @@ function addListenersOnDeleteBtns() {
 
 async function sendDeleteReq(id, resType) {
   try {
-    const res = await axios.delete(`${localBaseUrl}/${resType}/${id}`, {
+    const res = await axios.delete(`${baseUrl}/${resType}/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },

@@ -4,11 +4,7 @@ const formContainer = checkElementNull(".transparent-bg");
 
 //IMPORTS
 import { checkElementNull } from "./checkElementNull.js";
-import {
-  createFormTemplates,
-  productionBaseUrl,
-  localBaseUrl,
-} from "./data.js";
+import { createFormTemplates, baseUrl } from "./data.js";
 
 //LOGIC
 //EVENT LISTENER CREATE BTN
@@ -51,7 +47,7 @@ createItemBtn.addEventListener("click", (e) => {
 async function sendCreateItemReq(inputData, resType) {
   try {
     console.log(inputData);
-    const res = await axios.post(`${localBaseUrl}/${resType}/`, inputData, {
+    const res = await axios.post(`${baseUrl}/${resType}/`, inputData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },

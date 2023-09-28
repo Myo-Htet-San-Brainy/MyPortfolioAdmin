@@ -4,7 +4,7 @@ const loginBtn = checkElementNull(".login-submit-btn");
 
 //IMPORTS
 import { checkElementNull } from "../js/utils/checkElementNull.js";
-import { localBaseUrl, productionBaseUrl } from "./utils/data.js";
+import { baseUrl } from "./utils/data.js";
 
 //LOGIC
 //btn listening
@@ -23,7 +23,7 @@ loginBtn.addEventListener("click", (e) => {
 
 async function sendLoginReq(psw) {
   try {
-    const res = await axios.post(`${localBaseUrl}/admin/adminLogin`, {
+    const res = await axios.post(`${baseUrl}/admin/adminLogin`, {
       password: psw,
     });
     if (res.data.success) {
