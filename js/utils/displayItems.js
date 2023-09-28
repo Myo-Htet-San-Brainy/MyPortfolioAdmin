@@ -24,7 +24,7 @@ async function fetchData() {
       //add event listeners on delete btns
       addListenersOnDeleteBtns();
       //add event listeners on update btns
-      addListenersOnUpdateBtns(res.data.data);
+      // addListenersOnUpdateBtns(res.data.data);
       return;
     }
     throw new Error();
