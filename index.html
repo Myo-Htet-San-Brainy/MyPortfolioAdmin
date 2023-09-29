@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Links</title>
+    <title>Login</title>
     <!-- Packages -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- font awesome -->
@@ -26,102 +26,27 @@
       <section class="section-center">
         <div class="nav">
           <h2 class="nav-logo">portfolio admin</h2>
-          <button class="nav-button"><i class="fa-solid fa-bars"></i></button>
         </div>
       </section>
       <!-- End Of Navbar -->
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <!-- close button -->
-        <button class="sidebar-close-btn sidebar-close-cross">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <!-- End Of Close Button -->
-        <!-- sidebar links -->
-        <ul class="sidebar-links">
-          <li><a href="./index.html" class="sidebar-link">Links</a></li>
-          <li><a href="./works.html" class="sidebar-link">works</a></li>
-          <li>
-            <a href="./allProjects.html" class="sidebar-link">all projects</a>
-          </li>
-          <li><a href="./metrics.html" class="sidebar-link">Metrics</a></li>
-        </ul>
-        <!-- End Of Sidebar Links -->
-      </aside>
-      <!-- End Of Sidebar -->
       <!-- Content -->
-      <section class="section-center">
-        <div class="content">
-          <h2 class="content-title underline">all links</h2>
-          <div class="content-items" data-type="links">
-            <!-- Single Item -->
-            <article class="content-item">
-              <h3 class="link-name underline">Resume</h3>
-              <h3 class="content-item-id">id: 1234</h3>
-              <h3 class="link">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem,
-                soluta?
-              </h3>
-              <div class="link-buttons">
-                <button class="link-update-button">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button class="link-delete-button">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </div>
-            </article>
-            <!-- End Of Single Item -->
-            <!-- Single Item -->
-            <article class="content-item">
-              <h3 class="link-name underline">Resume</h3>
-              <h3 class="link">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem,
-                soluta?
-              </h3>
-              <div class="link-buttons">
-                <button class="link-update-button">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button class="link-delete-button">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </div>
-            </article>
-            <!-- End Of Single Item -->
-            <!-- Single Item -->
-            <article class="content-item">
-              <h3 class="link-name underline">Resume</h3>
-              <h3 class="link">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem,
-                soluta?
-              </h3>
-              <div class="link-buttons">
-                <button class="link-update-button">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button class="link-delete-button">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </div>
-            </article>
-            <!-- End Of Single Item -->
+      <div class="login-section-form">
+        <form action="" class="form">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="text"
+            class="form-input password-input"
+            placeholder="Password"
+            name="password"
+          />
+          <div class="btn-center">
+            <button class="login-submit-btn" type="submit">Login</button>
           </div>
-        </div>
-      </section>
+        </form>
+      </div>
       <!-- End Of Content -->
-      <!-- Create Button -->
-      <button class="create-btn" data-page="links">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <!-- End Of Create Button -->
-      <!-- Transparent background -->
-      <div class="transparent-bg"></div>
-      <!-- End Of Transparent background -->
       <!-- js -->
-      <script type="module" src="./js/utils/displayItems.js"></script>
-      <script type="module" src="./js/utils/createItem.js"></script>
-      <script type="module" src="./js/utils/navbar.js"></script>
+      <script type="module" src="./js/login.js"></script>
     </main>
   </body>
 </html>

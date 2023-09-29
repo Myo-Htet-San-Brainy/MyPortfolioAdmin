@@ -30,7 +30,7 @@ async function sendLoginReq(psw) {
       //store jwt
       localStorage.setItem("jwt", res.data.data);
       //proceed to links page
-      window.location.href = "index.html";
+      window.location.href = "links.html";
       return;
     }
     throw new Error();
